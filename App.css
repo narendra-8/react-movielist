@@ -1,0 +1,50 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: grey;
+  margin:20px ;
+  padding: 10px;
+  
+}
+
+.container {
+  /* border: 1px solid rgb(211, 193, 193);   */
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 340px;
+  background-color: navy;
+  color: white;
+  border-radius: 30px;
+ 
+
+
+  
+
+}
+
+img {
+  border: 2px solid black;
+}
+span {
+  font-weight: bolder;
+}
+
+.like-Dislike{
+
+  font-size: 20px;
+}
+
+
+.counter-container{
+  display: flex;
+  gap: 5px;
+
+}
+
+
+
