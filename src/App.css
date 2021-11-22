@@ -1,0 +1,103 @@
+
+*{
+  box-sizing: border-box;
+}
+  /* body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 90vh;
+    margin: 20px;
+   
+  } */
+  
+  input{
+    margin: 18px;
+    font-size: 18px;
+  
+  }
+  
+  
+  .container{
+  
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    margin:30px;
+    gap: 10px;
+
+    
+    
+  }
+  
+  .movielist{
+  
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    height:min-content;
+    justify-content:center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    
+  }
+  
+  .movieContainer{
+  
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 270px ;
+    /* height: max-content; */
+    
+  
+  }
+  img{
+    
+    height: 330px;
+    width: 150px ;
+    
+  }
+  
+  
+
+  .ColorBox{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    justify-content: center;  
+    flex-wrap: wrap;
+    align-content: center;
+    
+  }
+
+
+  p{
+    text-align: justify;
+  }
+
+  .firstrow_Moviecontainer{
+
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+  .firstrow_Moviecontainer-1{
+
+    display: flex;
+    justify-content: flex-start;
+  }
+
+ .movieContainer-1{
+    width: 100%;
+    height: 50%;
+    margin: 10px;
+    padding: 30px;
+ }
