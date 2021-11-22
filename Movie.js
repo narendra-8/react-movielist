@@ -11,20 +11,37 @@ import CardActions from '@mui/material/CardActions';
 import InfoIcon from '@mui/icons-material/Info';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-
-
 import { Counter } from './Counter';
 
-import { useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+// import { Initial } from './Initial';
+
+// import { MovieForm } from './MovieForm';
 
 
 
 
-  export function Movie({ Mname, poster, summary, Ratings } ) {
+  export function Movie({ Mname, poster, summary, Ratings, movieList,setmovieList, index} ) {
 
   const [show, setshow] = useState(true);
   const styles = { display: show ? "block" : "none" };
   const history = useHistory();
+
+
+
+
+ const Remove = ()=> {
+   console.log (index)                      
+   const removeindex =index;
+   const remainingmovies = movieList .filter ((mv, idx) => {
+    return idx !== removeindex;
+    
+
+  })
+  console.log (remainingmovies, removeindex, movieList)
+  setmovieList(remainingmovies)
+}
+ 
 
   return (   
     
@@ -40,7 +57,7 @@ import { useHistory} from 'react-router-dom'
             
             <h3 className="firstrow_Moviecontainer">
               {Mname} 
-              <IconButton onClick={() => setshow(!show)}  aria-label="Expand More&less Icon" color="primary">
+              <IconButton onClick={() => setshow(!show)}  aria-label="Expand More & less Icon" color="primary">
                   {show ? <ExpandLessIcon  /> : <ExpandMoreIcon  />}
               </IconButton>               
               <span>⭐ {Ratings}</span>            
@@ -49,13 +66,13 @@ import { useHistory} from 'react-router-dom'
              
 
               <div className="firstrow_Moviecontainer-1">
-                  <IconButton  onClick={()=> history.push('/AddColor')} aria-label="Info Icon" color="primary">
+                  <IconButton  onClick={()=> history.push('/films/' + index)} aria-label="Info Icon" color="primary">
                     <InfoIcon/>
                   </IconButton> 
-                  <IconButton  aria-label="Edit Icon" color="success">
+                  <IconButton  onClick={()=> history.push('/Movies/Edit/' + index)} aria-label="Edit Icon" color="success">
                     <EditIcon/>
                   </IconButton>
-                  <IconButton aria-label="Delete Icon" color="error">
+                  <IconButton onClick= {Remove} aria-label="Delete Icon" color="error">
                     <DeleteIcon/>
                   </IconButton> 
               </div>            
@@ -76,24 +93,3 @@ import { useHistory} from 'react-router-dom'
 }
 
 
-// function Edit ({Mname,Ratings,summary}){
-
-//   return (
-
-//     <Card className="movieContainer">    
-//         <CardContent>      
-          
-//             <h3 className="firstrow_Moviecontainer">
-//             {Mname}            
-//             <span>⭐ {Ratings}</span>            
-//             </h3>   
-//             <p >{summary} </p>          
-            
-//         </CardContent>
-
-      
-//       </Card>
-    
-
-//   )
-// }
